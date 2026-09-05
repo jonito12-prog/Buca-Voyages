@@ -1,0 +1,115 @@
+# 📑 SOMMAIRE PROPOSÉ (Corrigé et restructuré)
+
+INTRODUCTION GÉNÉRALE ................................................................................................... 1
+
+PARTIE 1 : CADRE THÉORIQUE ET CONCEPTUEL ........................................................... 4
+CHAPITRE 1 : PRÉSENTATION DE BUCA VOYAGES ........................................................ 5
+CHAPITRE 2 : ÉTAT DE L'ART ........................................................................................... 11
+CHAPITRE 3 : ÉTUDE DE L'EXISTANT ............................................................................. 15
+
+PARTIE 2 : MÉTHODOLOGIE ET ÉTUDE TECHNIQUE ................................................... 18
+CHAPITRE 1 : MÉTHODOLOGIE DU PROJET .................................................................. 19
+CHAPITRE 2 : ANALYSE .................................................................................................... 24
+CHAPITRE 3 : CONCEPTION ............................................................................................. 32
+CHAPITRE 4 : ÉVALUATION ET ESTIMATION DES COÛTS ........................................ 41
+
+PARTIE 3 : MISE EN ŒUVRE ET RÉSULTATS ................................................................. 44
+CHAPITRE 1 : IMPLÉMENTATION .................................................................................... 45
+CHAPITRE 2 : RÉSULTATS ET TESTS ............................................................................. 53
+CHAPITRE 3 : DIFFICULTÉS RENCONTRÉES ET SOLUTIONS APPORTÉES ............ 64
+
+CONCLUSION GÉNÉRALE ................................................................................................ 68
+RÉFÉRENCES BIBLIOGRAPHIQUES .............................................................................. 70
+ANNEXES ............................................................................................................................. 71
+
+---
+
+# 🖼️ LISTE DES FIGURES (Formatée)
+
+Figure 1 : Agence Buca Voyages ....................................................................................... 21
+Figure 2 : Moyens de transport Buca Voyages ................................................................ 22
+Figure 3 : Implantation des agences Buca Voyages ........................................................ 22
+Figure 4 : Cycle de vie Scrum ............................................................................................ 29
+Figure 5 : Diagramme de cas d'utilisation ........................................................................ 32
+Figure 6 : Diagramme de classes ...................................................................................... 33
+Figure 7 : Diagramme de séquence — Consommation d'un voyage .............................. 34
+Figure 8 : Modèle de la base de données (ERD) .............................................................. 34
+Figure 9 : Diagramme de Gantt du projet ......................................................................... 37
+Figure 10 : Page de connexion de l'application ................................................................ 41
+Figure 11 : Tableau de bord administrateur ..................................................................... 41
+Figure 12 : Interface de création d'un client VIP .............................................................. 42
+Figure 13 : Interface de gestion des cartes VIP ................................................................ 42
+Figure 14 : Interface de gestion des forfaits .................................................................... 43
+Figure 15 : Interface de consommation d'un voyage ....................................................... 43
+
+*(Note : Vous pouvez appliquer ce même alignement avec des points de suite pour votre Liste des Tableaux)*
+
+---
+
+# ✍️ CONTENU DES CHAPITRES MODIFIÉS
+
+## PARTIE 2 : MÉTHODOLOGIE ET ÉTUDE TECHNIQUE
+
+*(... Le Chapitre 1 : Méthodologie du projet reste inchangé ...)*
+
+### CHAPITRE 2 : ANALYSE
+
+Ce chapitre a pour objectif de détailler l'analyse fonctionnelle et technique du système, en se basant sur les exigences du projet Buca Voyages. L'analyse des besoins, la modélisation et la définition de l'architecture technique constituent la fondation solide sur laquelle reposera la conception.
+
+#### 2.1. Analyse des Besoins Fonctionnels
+L'analyse des besoins a permis de définir les services que le système doit fournir. Nous avons identifié plusieurs rôles distincts, assurant une gestion des accès sécurisée.
+
+**2.1.1. Rôle Utilisateur : Administrateur**
+L'administrateur dispose d'un accès complet au système. Il peut :
+- Superviser l'ensemble des opérations (clients, cartes, forfaits).
+- Consulter les statistiques et le tableau de bord en temps réel.
+- Gérer les configurations globales et auditer les actions du personnel.
+
+**2.1.2. Rôle Utilisateur : Agent d'agence**
+L'agent d'agence est l'utilisateur principal au guichet. Il doit pouvoir :
+- Créer et modifier des profils de clients VIP.
+- Créer, attribuer, suspendre ou réactiver une carte VIP.
+- Enregistrer le paiement et l'attribution d'un forfait de voyages.
+- Décompter un voyage lors de l'embarquement d'un client.
+
+**2.1.3. Rôle Utilisateur : Client VIP**
+Le client VIP est le bénéficiaire. Le système doit garantir que ses informations sont sécurisées et que son solde de voyages est toujours exact et à jour.
+
+#### 2.2. Modélisation et Spécification
+La modélisation permet de formaliser les besoins fonctionnels via des diagrammes UML.
+- **Modélisation des Cas d'Utilisation :** Les acteurs interagissent avec le système pour s'authentifier, gérer les cartes et consommer des voyages.
+- **Modélisation Comportementale :** Des diagrammes de séquence illustrent le déroulement temporel d'opérations critiques, comme la vérification de la validité d'une carte et le décompte automatique d'un trajet.
+
+#### 2.3. Analyse de l'Architecture Technique
+L'architecture technique a été définie pour répondre aux besoins de sécurité, de traçabilité et de fiabilité exigés par Buca Voyages.
+
+**2.3.1. Besoins Non Fonctionnels**
+- **Sécurité :** L'authentification et le contrôle d'accès basé sur les rôles (RBAC) sont obligatoires pour éviter la fraude.
+- **Fiabilité et Traçabilité :** Chaque opération (ajout d'un forfait, consommation) doit être journalisée (audit log) pour éviter les litiges.
+- **Centralisation :** La base de données doit être unique et accessible par toutes les agences en temps réel.
+
+*(... Le Chapitre 3 (Conception) et Chapitre 4 (Évaluation) reprennent votre texte original en respectant la nouvelle numérotation ...)*
+
+---
+
+## PARTIE 3 : MISE EN ŒUVRE ET RÉSULTATS
+
+### CHAPITRE 1 : IMPLÉMENTATION
+
+**1.1. Environnement et outils de développement**
+
+Ce chapitre a pour but de décrire les étapes concrètes de la mise en œuvre technique de l'application, en se basant sur la conception détaillée précédemment. Nous allons détailler l'environnement de développement, l'organisation du code et l'intégration des différentes technologies.
+
+Ce projet est développé en utilisant plusieurs langages complémentaires, structurés autour du framework moderne Laravel (PHP) :
+
+**1. Côté Serveur (Backend)**
+* **PHP :** C'est le langage principal du projet. Il gère toute la logique métier, la sécurité, les routes, les contrôleurs, et les services. Le projet s'appuie sur le framework Laravel 11, qui est la référence actuelle en PHP pour la création d'applications web robustes.
+* **SQL (Transact-SQL) :** Utilisé pour structurer, requêter et gérer la base de données relationnelle via Microsoft SQL Server.
+
+**2. Côté Client (Frontend / Interface Utilisateur)**
+* **HTML (via Blade) :** Utilisé pour structurer les pages web. Laravel utilise le moteur de template Blade (fichiers `.blade.php`) pour générer dynamiquement le code HTML envoyé au navigateur.
+* **CSS :** Utilisé pour le design, la mise en page (Layouts) et les animations (comme l'effet holographique et la rotation 3D de la carte virtuelle VIP).
+* **JavaScript :** Utilisé pour ajouter de l'interactivité dynamique sur les pages sans rechargement (comme le chatbot intelligent BucaBot, le suivi du curseur 3D sur la carte, ou le masquage dynamique des champs de formulaire).
+
+**1.2. Structure de l'application Laravel**
+*(Le reste de votre chapitre 1 reste identique à ce que vous aviez écrit à l'origine...)*

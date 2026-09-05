@@ -1,0 +1,6 @@
+Administrateur Général :
+Email : admin@bucavoyages.test
+Mot de passe : Password@123
+Agent d'Agence (Mboppi) :
+Email : agent@bucavoyages.test
+Mot de passe : Password@123
